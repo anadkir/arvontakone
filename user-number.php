@@ -1,4 +1,4 @@
-<form name="user">
+<form name="user" method="post" action="index.php">
     <div class="user-number">
         <?php
             for($i = 1; $i < 31; $i++){
