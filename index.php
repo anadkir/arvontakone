@@ -16,6 +16,8 @@
     <body>
         <div class="content sign">
             <h1 class="sign__word">Tervetuloa arvontaan</h1>
+            <p class="discription row1">Valita 6 numeroa ja paina lähetä-näppäintä.</p>
+            <p class="discription">Jos haluat postaa kaikki valintasi paina "poista valinnat" näppäintä.</p>
             <?php include 'user-number.php' ?>
             <div class="print-user-number">
 

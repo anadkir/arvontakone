@@ -5,7 +5,17 @@ body{
     background-repeat: repeat-y;
     background-color: #141414;
 }
+.discription{
+    color: white;
+    font-size: 18px;
+}
+.row1{
+    margin-bottom: 4px;
+}
 .btn-block {
     display: block;
     width: 100%;
+}
+.row{
+    margin-bottom: 1rem;
 }

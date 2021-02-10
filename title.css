@@ -25,6 +25,7 @@ h1 {
     color: #c6e2ff;
     -webkit-animation: neon .08s ease-in-out infinite alternate;
     animation: neon .08s ease-in-out infinite alternate;
+    margin-top: 20px;
 }
 
 /*-- Animation Keyframes --*/
