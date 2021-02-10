@@ -14,20 +14,39 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
-        <div class="content sign">
-            <h1 class="sign__word">Tervetuloa arvontaan</h1>
-            <p class="discription row1">Valita 6 numeroa ja paina lähetä-näppäintä.</p>
-            <p class="discription">Jos haluat postaa kaikki valintasi paina "poista valinnat" näppäintä.</p>
-            <?php include 'user-number.php' ?>
-            <div class="print-user-number">
-
+        <div class="content container">
+            <div class="sign">
+                <h1 class="sign__word">Tervetuloa arvontaan</h1>
             </div>
-            <div class="comp-number">
+            <div class="row">
+                <div class="col">
+                    <div class="description">
+                        <p class="description-text row1">Valita 6 numeroa ja paina lähetä-näppäintä.</p>
+                        <p class="description-text">Jos haluat postaa kaikki valintasi paina "poista valinnat" näppäintä.</p>
+                    </div>
+                </div>
+                <div class="col">
 
+                </div>
             </div>
-            <div class="result">
+            <div class="row">
+                <div class="col">
+                    <?php include 'user-number.php' ?>
+                </div>
+                <div class="col">
+                    <div class="print-user-number">
+                        <p class="text">Olet valinnut:</p>
+                    </div>
+                    <div class="comp-number">
+                        <p class="text">Tietokone oli valinnut:</p>
+                    </div>
+                    <div class="result">
+                        <p class="text">Samoja numeroita on: . Se on %.</p>
+                    </div>
+                </div>
+            </div>
 
-            </div>
+
         </div>
     </body>
 </html>
