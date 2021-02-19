@@ -68,7 +68,7 @@
                                 </div>
                             </div>
                         <?php endif; ?>
-                        <?php if ($numbersCount == 0): ?>
+                        <?php if ($_SERVER['REQUEST_METHOD'] === 'POST' && $numbersCount == 0): ?>
                             <div class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
                                 <div class="d-flex">
                                     <div class="toast-body">
