@@ -32,6 +32,7 @@
                     <?php include 'user-number.php' ?>
                 </div>
                 <div class="col">
+                    <?php if ($numbersCount == 6): ?>
                     <div class="print-user-number">
                         <p class="text">Olet valinnut: <?= $userNumbers ?></p>
                     </div>
@@ -46,14 +47,47 @@
                         echo "<img src=\"https://lh3.googleusercontent.com/FQiAWSqEcQqiwL8kyXCki5lt1Ug31R1IViH5ZUpejDKRuwQYDNBe0m3_TgMV_0b8YmUlsqig6lzP9yL77Rfk4Ek=s0\" alt=\"You are winner!\" class=\"winner\"";
                         }?>
                     </div>
+                    <?php else: ?>
+                    <?php if ($numbersCount > 6): ?>
+                        <div class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                            <div class="d-flex">
+                                <div class="toast-body">
+                                    Olet valitsemassa liian paljon vaihtoehtoa. Valitse pelkkä 6.
+                                </div>
+                                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                        <?php if ($numbersCount < 6 && $numbersCount != 0): ?>
+                            <div class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                                <div class="d-flex">
+                                    <div class="toast-body">
+                                        Olet valitsemassa liian vähän vaihtoehtoa. Valitse pelkkä 6.
+                                    </div>
+                                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                        <?php if ($numbersCount == 0): ?>
+                            <div class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                                <div class="d-flex">
+                                    <div class="toast-body">
+                                        Et valinnut mitään. Valitse 6 numeroa ja paina "Lähetä".
+                                    </div>
+                                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
-        <div class="toast d-flex align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-body">
-                <p><?= 'Olet valitsemassa liian paljon vaihtoehtoa. Valitse pelkkä 6.' ?></p>
-            </div>
-            <button type="button" class="btn-close ms-auto me-2" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
+        <script>
+            let toastElList = [].slice.call(document.querySelectorAll('.toast'))
+            let toastList = toastElList.map(function (toastEl) {
+                return new bootstrap.Toast(toastEl)
+            })
+            toastList.forEach((e) => e.show())
+        </script>
     </body>
 </html>
